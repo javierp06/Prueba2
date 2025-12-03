@@ -13,13 +13,13 @@ app.use(express.json());
 let isMongoConnected = false;
 const localHistory = [];
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://javierp191999_db_user:MRzdcwhl4ptA3TqL@cluster0.96ocxfm.mongodb.net/')
+mongoose.connect(process.env.MONGODB_URI )
     .then(() => {
         console.log('MongoDB conectado');
         isMongoConnected = true;
     })
     .catch(err => {
-        console.log('Fallo la conexion a MongoDB o no esta configurada. Usando almacenamiento en memoria.');
+        console.log('Fallo la conexion a MongoDB');
         console.error('Error de conexion a MongoDB:', err);
     });
 
